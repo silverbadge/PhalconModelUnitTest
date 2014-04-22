@@ -10,7 +10,8 @@ namespace Silverbadge\Api;
 use Phalcon\Mvc\User\Component;
 use Silverbadge\Models\Popup;
 
-class Facade extends Component {
+class Facade extends Component
+{
     public function createNewPopup($name, $content)
     {
         $response = array();
@@ -20,7 +21,8 @@ class Facade extends Component {
             $response['message'] = "Bad request, empty parameters supplied or popup with this name already exists";
         } else {
             $popup = new Popup();
-            $popup->save(array(
+            $popup->save(
+                array(
                     'Name' => $name,
                     'Content' => $content,
                     'CreatedAt' => date('Y-m-d H:i:s'),
@@ -34,4 +36,4 @@ class Facade extends Component {
         }
         return $response;
     }
-} 
+}
