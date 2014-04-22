@@ -4,12 +4,15 @@ before_script:
   - chmod a+x ./tests/install-php-extension.sh
   - ./tests/install-php-extension.sh
   - composer self-update
-  - composer update --dev -o
+  - composer update --dev -o --no-interaction
 
 php:
+  - 5.3
   - 5.4
   - 5.5
 
 script:
+  - mkdir -p build/logs
   - phpunit --configuration ./phpunit.xml
-
+after_script:
+  - php vendor/bin/coveralls -v
