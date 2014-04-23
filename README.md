@@ -4,3 +4,5 @@ PhalconModelUnitTest
 ====================
 
 Phalcon model unit test example
+
+http://www.rami.me.uk/how-to-unit-test-code-with-phalcon-mvc-models/
