@@ -1,0 +1,21 @@
+box: duythien/phalcon@1.1.1
+build:
+  steps:
+    - script:
+        name: Add php.ini
+        code: echo 'extension=phalcon.so' >> $HOME/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+    - script:
+        name: install dependencies
+        code: composer install
+    - script:
+        name: Serve application for integration tests
+        code: php -S localhost:8000 >> /dev/null &
+    - script:
+        name: PHPUnit integration tests
+        code: phpunit --configuration phpunit.xml
+  #send messages into hipchat
+  after-steps:
+    - hipchat-notify:
+        token: 515331b35c68161893f57ab564580f
+        room-id: 739722
+        from-name: wercker
