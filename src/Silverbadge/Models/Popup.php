@@ -147,5 +147,4 @@ class Popup extends Model
     {
         $this->useDynamicUpdate(true);
     }
-    
-}
+}//end class
