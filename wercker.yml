@@ -1,4 +1,5 @@
 box: duythien/phalcon@1.2.1
+no-response-timeout: 25
 build:
   steps:
     - script:
