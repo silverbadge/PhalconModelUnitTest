@@ -10,6 +10,11 @@ build:
     - script:
         name: PHPUnit integration tests
         code: phpunit --configuration phpunit.xml
+    - mbrevda/phpcs:
+        directory: src
+        standard: PSR2
+        ignore: tests
+        report: full
   #send messages into hipchat
   after-steps:
     - hipchat-notify:
