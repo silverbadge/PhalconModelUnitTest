@@ -1,5 +1,6 @@
 box: duythien/phalcon@1.2.1
 services:
+  - mies/rethinkdb
   - icook/python-grunt-haml@0.1.0
 no-response-timeout: 25
 build:
