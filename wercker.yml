@@ -27,3 +27,20 @@ build:
         token: 515331b35c68161893f57ab564580f
         room-id: 739722
         from-name: wercker
+  deploy :
+    steps :
+      - script:
+          name: Configure git
+          code: |-
+            git config --global user.email "pleasemailus@wercker.com"
+            git config --global user.name "wercker"
+
+            # remove current .git folder
+            rm -rf .git
+      - script:
+          name: Deploy to github pages
+          code: |-
+            git init
+            git add .
+            git commit -m "deploy commit from $WERCKER_STARTED_BY"
+            git push -f $GIT_REMOTE master:gh-pages
