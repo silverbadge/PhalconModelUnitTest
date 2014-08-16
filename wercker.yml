@@ -17,7 +17,7 @@ build:
     - script:
         name: sass compile
         #code: bundle exec sass --style compressed assets/scss/styles.scss:assets/css/styles.min.css --debug-info
-        code: bundle exec compass compile
+        code: compass compile
     - mbrevda/phpcs:
         directory: src
         standard: PSR2
