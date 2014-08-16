@@ -4,6 +4,7 @@ services:
 no-response-timeout: 25
 build:
   steps:
+    - bundle-install
     - script:
         name: install dependencie
         code: composer install
