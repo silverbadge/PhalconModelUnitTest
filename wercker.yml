@@ -28,19 +28,10 @@ build:
         room-id: 739722
         from-name: wercker
   deploy :
-    steps :
-      - script:
-          name: Configure git
-          code: |-
-            git config --global user.email "pleasemailus@wercker.com"
-            git config --global user.name "wercker"
-
-            # remove current .git folder
-            rm -rf .git
-      - script:
-          name: Deploy to github pages
-          code: |-
-            git init
-            git add .
-            git commit -m "deploy commit from $WERCKER_STARTED_BY"
-            git push -f $GIT_REMOTE master:gh-pages
+    steps:
+      # Execute the s3sync deploy step, a step provided by wercker
+      - s3sync:
+          key_id: $AWS_ACCESS_KEY_ID
+          key_secret: $AWS_SECRET_ACCESS_KEY
+          bucket_url: $AWS_BUCKET_URL
+          source_dir: build/
