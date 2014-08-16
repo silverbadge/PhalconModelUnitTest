@@ -21,6 +21,11 @@ build:
         standard: PSR2
         ignore: tests
         report: full
+    - script:
+        #name: my deploy
+        #code: ./deploy.sh
+        code: export
+            
   #send messages into hipchat
   after-steps:
     - hipchat-notify:
