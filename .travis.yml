@@ -16,3 +16,10 @@ script:
   - phpunit --configuration ./phpunit.xml
 after_script:
   - php vendor/bin/coveralls -v
+  
+notifications:
+  hipchat:
+    rooms:
+      - 515331b35c68161893f57ab564580f@739722
+    template:
+      - '%{repository}#%{build_number} (%{branch} - %{commit} : %{author}): %{message}'
