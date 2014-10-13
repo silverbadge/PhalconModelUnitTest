@@ -12,10 +12,10 @@ build:
         - script:
             name: PHPUnit integration tests
             code: phpunit --configuration phpunit.xml
-        - script:
-            name: sass compile
+        #- script:
+         #   name: sass compile
             #code: bundle exec sass --style compressed assets/scss/styles.scss:assets/css/styles.min.css --debug-info
-            code: compass compile sass-test
+          #  code: compass compile sass-test
         #Code Style Check
         - mbrevda/phpcs:
             directory: src
