@@ -143,8 +143,7 @@ class Popup extends Model
     /**
      * Initialize method for model.
      */
-    public function initialize()
-    {
+    public function initialize() {
         $this->useDynamicUpdate(true);
     }
 }//end class
