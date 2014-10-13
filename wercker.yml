@@ -55,7 +55,7 @@ deploy :
             token: 515331b35c68161893f57ab564580f
             room-id: 739722
             from-name: wercker
-        - sherzberg/slack-notify:
-            subdomain: wercker
-            token: $SLACK_TOKEN
-            channel: general
+        #- sherzberg/slack-notify:
+            #subdomain: wercker
+            #token: $SLACK_TOKEN
+            #channel: general
